@@ -31,5 +31,12 @@
     "optionalDependencies": {
         "@rolldown/binding-linux-x64-gnu": "1.2.15",
         "lightningcss-linux-x64-gnu": "1.33.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ashvin94/Imovies.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ashvin94/Imovies/issues"
     }
 }
