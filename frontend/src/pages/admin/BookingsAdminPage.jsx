@@ -1,0 +1,11 @@
+import { useEffect, useState } from 'react';
+import { adminApi } from '../../services/api/api';
+import { errorMessage } from '../../services/http/httpClient';
+import { ErrorState, EmptyState } from '../../components/common/Feedback';
+import { dateTime, money } from '../../utils/format';
+
+export default function BookingsAdminPage() {
+  const [filters, setFilters] = useState({ reference: '', status: '' }); const [bookings, setBookings] = useState([]); const [error, setError] = useState('');
+  const load = () => adminApi.bookings(Object.fromEntries(Object.entries(filters).filter(([, value]) => value))).then(({ data }) => setBookings(data.data.bookings)).catch((err) => setError(errorMessage(err))); useEffect(() => { load(); }, []);
+  return <><div className="page-heading"><div><div className="eyebrow">Customer support</div><h1>Bookings</h1></div></div><form className="filter-bar" onSubmit={(e) => { e.preventDefault(); load(); }}><input className="form-control" placeholder="Booking reference" aria-label="Booking reference" value={filters.reference} onChange={(e) => setFilters({ ...filters, reference: e.target.value })} /><select className="form-select" aria-label="Booking status" value={filters.status} onChange={(e) => setFilters({ ...filters, status: e.target.value })}><option value="">All statuses</option>{['held','confirmed','cancelled','expired','refunded'].map((status) => <option key={status}>{status}</option>)}</select><button className="btn btn-primary">Search</button></form>{error && <ErrorState message={error} />}{!error && !bookings.length ? <EmptyState title="No bookings found" text="Try changing the filters." /> : <div className="table-responsive"><table className="table table-dark align-middle"><thead><tr><th>Reference</th><th>Movie/show</th><th>Seats</th><th>Status</th><th>Total</th></tr></thead><tbody>{bookings.map((booking) => <tr key={booking._id}><td>{booking.reference}</td><td>{booking.show?.movie?.title}<small className="d-block">{booking.show?.startAt && dateTime(booking.show.startAt)}</small></td><td>{booking.seats.map((seat) => seat.label).join(', ')}</td><td><span className={`status status-${booking.status}`}>{booking.status}</span></td><td>{money(booking.total, booking.currency)}</td></tr>)}</tbody></table></div>}</>;
+}

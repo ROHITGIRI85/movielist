@@ -1,0 +1,32 @@
+{
+    "name": "@imovies/frontend",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "lint": "eslint .",
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "axios": "^1.7.0",
+        "bootstrap": "^5.3.0",
+        "react": "^18.3.0",
+        "react-dom": "^18.3.0",
+        "react-router-dom": "^7.18.4"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^6.6.0",
+        "@testing-library/react": "^16.0.0",
+        "@types/react": "^18.3.0",
+        "@types/react-dom": "^18.3.0",
+        "@vitejs/plugin-react": "^6.1.2",
+        "eslint": "^9.0.0",
+        "eslint-plugin-react": "^7.37.5",
+        "jsdom": "^29.1.1",
+        "vite": "^8.3.5",
+        "vitest": "^5.0.5"
+    }
+}

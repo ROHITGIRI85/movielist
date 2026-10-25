@@ -1,0 +1,31 @@
+{
+    "name":  "imovies",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Movie ticket booking made simple.",
+    "workspaces":  [
+                       "frontend",
+                       "backend"
+                   ],
+    "scripts":  {
+                    "install:all":  "npm install --workspaces",
+                    "dev":  "concurrently npm:dev:*",
+                    "build":  "npm run build --workspace frontend",
+                    "test":  "npm run test --workspaces --if-present",
+                    "lint":  "npm run lint --workspaces --if-present",
+                    "dev:frontend":  "npm --prefix frontend run dev",
+                    "dev:backend":  "npm --prefix backend run dev",
+                    "db:up":  "docker compose up -d mongodb",
+                    "db:down":  "docker compose down",
+                    "seed":  "npm run seed --workspace backend",
+                    "verify":  "npm run lint \u0026\u0026 npm test \u0026\u0026 npm run build"
+                },
+    "engines":  {
+                    "node":  "\u003e=20.19.0",
+                    "npm":  "\u003e=8"
+                },
+    "license":  "MIT",
+    "devDependencies":  {
+                            "concurrently":  "^9.0.0"
+                        }
+}
