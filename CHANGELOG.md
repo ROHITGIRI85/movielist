@@ -6,6 +6,10 @@ All notable changes to IMovies will be recorded here. The format follows Keep a 
 
 ### Fixed
 
+- Aligned the documented and CI Node.js baseline with Vitest's supported Node 22.13+ runtime.
+- Added version-matched Rolldown and Lightning CSS Linux bindings required by clean Ubuntu installs and GitHub Actions.
+- Made integration tests wait for MongoDB indexes before exercising uniqueness constraints, removing clean-environment race conditions.
+
 - Corrected admin page effects that returned promises as React cleanup functions, which caused navigation and unmount crashes.
 - Added visible request failure handling and retry support across the admin dashboard and management actions.
 - Pinned the Vite development port so a second server cannot silently start on a CORS-incompatible origin.

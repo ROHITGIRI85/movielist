@@ -9,7 +9,7 @@ Both workspaces are runnable. The Express backend provides authentication, catal
 ### Software
 
 - Windows 10/11, macOS, or a modern Linux distribution
-- Node.js 20.19 or newer; the exact shared baseline is recorded in `.nvmrc`
+- Node.js 22.13 or newer; the exact shared baseline is recorded in `.nvmrc`
 - npm 8 or newer
 - Docker Desktop (recommended local MongoDB path), MongoDB installed locally, or a managed MongoDB connection string
 - Git and a code editor such as Visual Studio Code
