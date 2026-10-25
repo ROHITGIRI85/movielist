@@ -12,7 +12,7 @@ Phase 1 covers the local structure and documentation portions of this epic. The 
 
 ## Epic 2: Backend development (4 stories)
 
-**Status:** Stories 4-14 are implemented and tested, including the backend, customer booking interface, and administration interface. Full integration review begins next.
+**Status:** Stories 4-17 are implemented and pass the automated integration, security, concurrency, and production-build gates. The current-Firefox manual journey remains before the integration phase closes.
 
 4. Bootstrap the Express application, environment validation, middleware, health route, and error contract.
 5. Implement registration, login, refresh/logout, profile access, and role authorization.

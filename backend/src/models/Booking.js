@@ -54,6 +54,10 @@ const bookingSchema = new mongoose.Schema(
   },
 );
 
+bookingSchema.index({ user: 1, createdAt: -1 });
+bookingSchema.index({ status: 1, createdAt: -1 });
+bookingSchema.index({ createdAt: -1 });
+
 bookingSchema.pre('validate', function validateAmounts(next) {
   if (!this.seats?.length) this.invalidate('seats', 'At least one seat is required.');
   if (this.total !== this.subtotal + this.fees) this.invalidate('total', 'Total must equal subtotal plus fees.');

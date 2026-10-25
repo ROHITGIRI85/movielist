@@ -4,7 +4,7 @@ Movie ticket booking made simple.
 
 IMovies is a planned MERN web application where customers can discover movies, compare showtimes, select available seats, and manage reservations. The system will use a React client, an Express/Node.js REST API, and MongoDB, with JWT-based authentication and real-time seat-availability safeguards.
 
-> Current status: the MERN customer and admin application is implemented through Phase 7 and prepared for GitHub CI. React users can discover movies, select seats, complete simulated checkout, manage bookings, and use JWT role-protected administration screens. Real payment-gateway work, deployment, and mentor links remain.
+> Current status: Phase 8 automated integration and quality review passes. React users can discover movies, select seats, complete simulated checkout, manage bookings, and use JWT role-protected administration screens. A current-Firefox manual pass remains before Phase 8 closes; deployment and mentor links follow in Phase 9.
 
 ## Project links
 
@@ -72,6 +72,7 @@ Both the Express API and React application are runnable. Local Docker MongoDB co
 - [Database design](docs/DATABASE.md)
 - [Security](docs/SECURITY.md)
 - [Testing strategy](docs/TESTING.md)
+- [Phase 8 quality review](docs/PHASE_8_QUALITY_REVIEW.md)
 - [Delivery roadmap](docs/ROADMAP.md)
 - [Git workflow](docs/GIT_WORKFLOW.md)
 - [Contribution guide](CONTRIBUTING.md)
@@ -84,8 +85,9 @@ Both the Express API and React application are runnable. Local Docker MongoDB co
 4. Seat inventory and booking engine with simulated payment (complete)
 5. React foundation and account screens (complete)
 6. Customer booking and admin frontend (complete)
-7. Integration hardening and GitHub CI (complete)
-8. Provider-backed payment, real-time updates, deployment, and review links (next)
+7. React administration screens (complete)
+8. Full integration and quality review (automated gates complete; Firefox check pending)
+9. Deployment, demo, and mentor handoff (next after Phase 8 closes)
 
 ## License
 

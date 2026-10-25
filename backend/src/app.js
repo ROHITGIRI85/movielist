@@ -12,12 +12,15 @@ const app = express();
 
 app.disable('x-powered-by');
 app.use(helmet());
-app.use(
-  cors({
-    origin: env.clientUrl,
-    credentials: true,
-  }),
-);
+const corsOptions = {
+  origin(origin, callback) {
+    if (!origin || origin === env.clientUrl) return callback(null, true);
+    return callback(null, false);
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '100kb' }));
 app.use(cookieParser());
 if (env.nodeEnv !== 'test') app.use(morgan('dev'));

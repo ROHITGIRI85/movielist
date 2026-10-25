@@ -336,6 +336,8 @@ Do not begin the next phase until the current phase exit checklist passes.
 
 ## Phase 8: Full integration and quality review
 
+**Status:** Automated review complete; current-Firefox manual journey pending because Firefox is not installed.
+
 **Goal:** Make the complete MERN application dependable and ready to demonstrate.
 
 ### Tasks
@@ -357,12 +359,12 @@ Do not begin the next phase until the current phase exit checklist passes.
 
 ### Exit checklist
 
-- [ ] Linting and all automated tests pass.
-- [ ] No known double-booking path exists.
-- [ ] No critical authorization or secret issue remains.
-- [ ] Production client build completes.
+- [x] Linting and all automated tests pass.
+- [x] No known double-booking path exists.
+- [x] No critical authorization or secret issue remains.
+- [x] Production client build completes.
 - [ ] Main journeys work in current Chrome and Firefox.
-- [ ] Setup instructions work from a clean checkout.
+- [x] Setup instructions work from a clean checkout.
 
 ## Phase 9: Deployment, demo, and mentor handoff
 

@@ -2,7 +2,7 @@
 
 ## Current status
 
-The backend passes 7 Jest suites and 32 tests covering authentication, authorization, catalogue, inventory, concurrent holds, bookings, and cancellation. The frontend passes 6 Vitest files and 11 tests covering formatting, movie presentation, accessible seat behavior, signed-out protection, admin-role protection, and rendering every admin route. The Vite production build also succeeds. Full browser end-to-end testing remains Phase 8.
+The backend passes 8 Jest suites and 48 tests covering authentication, authorization, security headers, CORS, catalogue, inventory, three repeated concurrent-hold races, bookings, and cancellation. The frontend passes 7 Vitest files and 14 tests covering formatting, movie presentation, accessible seat behavior, signed-out/admin protection, all admin routes, and safe customer-route navigation. Linting, the Vite production build, dependency audit, live API/frontend checks, and responsive Chrome renders pass. A current-Firefox manual journey is still required; see [Phase 8 Quality Review](PHASE_8_QUALITY_REVIEW.md).
 
 ## Goals
 

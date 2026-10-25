@@ -11,7 +11,7 @@ export default function SeatSelectionPage() {
   const { showId } = useParams(); const navigate = useNavigate();
   const [seats, setSeats] = useState([]); const [selected, setSelected] = useState([]); const [loading, setLoading] = useState(true); const [error, setError] = useState(''); const [busy, setBusy] = useState(false);
   const load = () => { setLoading(true); catalogueApi.seats(showId).then(({ data }) => setSeats(data.data.seats)).catch((err) => setError(errorMessage(err))).finally(() => setLoading(false)); };
-  useEffect(load, [showId]);
+  useEffect(() => { load(); }, [showId]);
   const total = useMemo(() => seats.filter((seat) => selected.includes(seat.seatId)).reduce((sum, seat) => sum + seat.amount, 0), [seats, selected]);
   const toggle = (id) => setSelected((items) => items.includes(id) ? items.filter((item) => item !== id) : items.length < 10 ? [...items, id] : items);
   const hold = async () => { setBusy(true); setError(''); try { const { data } = await bookingApi.hold({ showId, seatIds: selected }); sessionStorage.setItem(`booking:${data.data.booking._id}`, JSON.stringify(data.data.booking)); navigate(`/checkout/${data.data.booking._id}`); } catch (err) { setError(errorMessage(err)); if (err.response?.status === 409) { setSelected([]); load(); } } finally { setBusy(false); } };

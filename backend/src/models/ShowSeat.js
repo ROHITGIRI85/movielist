@@ -22,6 +22,7 @@ const showSeatSchema = new mongoose.Schema(
 );
 
 showSeatSchema.index({ show: 1, seatId: 1 }, { unique: true });
+showSeatSchema.index({ show: 1, status: 1 });
 showSeatSchema.index({ status: 1, holdExpiresAt: 1 });
 
 module.exports = mongoose.model('ShowSeat', showSeatSchema);

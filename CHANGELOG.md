@@ -6,6 +6,10 @@ All notable changes to IMovies will be recorded here. The format follows Keep a 
 
 ### Fixed
 
+- Prevented customer booking pages from returning Promise values as React effect cleanup functions.
+- Restricted credentialed CORS responses to the configured frontend origin.
+- Added compound booking and seat-status indexes for common list/filter queries.
+
 - Aligned the documented and CI Node.js baseline with Vitest's supported Node 22.13+ runtime.
 - Added version-matched Rolldown and Lightning CSS Linux bindings required by clean Ubuntu installs and GitHub Actions.
 - Made integration tests wait for MongoDB indexes before exercising uniqueness constraints, removing clean-environment race conditions.

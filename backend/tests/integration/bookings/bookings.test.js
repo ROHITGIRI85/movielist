@@ -77,9 +77,9 @@ describe('seat inventory and bookings', () => {
     expect((await ShowSeat.findById(seat._id)).status).toBe('booked');
   });
 
-  test('allows only one winner when two customers request the same seat concurrently', async () => {
+  test.each([1, 2, 3])('allows only one winner when two customers request the same seat concurrently (round %i)', async (round) => {
     const { showId } = await createBookableShow();
-    const [first, second] = await Promise.all([register('First Customer', 'first@example.com'), register('Second Customer', 'second@example.com')]);
+    const [first, second] = await Promise.all([register('First Customer', 'first-' + round + '@example.com'), register('Second Customer', 'second-' + round + '@example.com')]);
     const seat = await ShowSeat.findOne({ show: showId });
     const payload = { showId, seatIds: [seat.seatId.toString()] };
     const responses = await Promise.all([
