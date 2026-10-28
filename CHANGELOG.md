@@ -20,6 +20,8 @@ All notable changes to IMovies will be recorded here. The format follows Keep a 
 
 ### Added
 
+- Redesigned the interface with a midnight-cinema theme using warm gold actions, teal selection states, richer surfaces, and clearer interactive feedback.
+
 - GitHub Actions continuous integration and repository line-ending rules.
 
 - Expanded development catalogue with six published movies, six scheduled shows, and generated seat inventories.
